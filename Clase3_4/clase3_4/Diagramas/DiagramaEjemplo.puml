@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/class-diagram
+class Auto{
+- modelo: String
+- tipo: String
+- cilindrada: double
+- anioFabricacion: int
+- capacidadTanque: int
++ arrancar(): String
++ acelerar(int rmp): String
++ consumoDeGasolina(double km): double
+}
+
+class Persona{
+- nombre: String
+-apellido: String
+- edad: int
++ conducirAuto():void
+}
+
+@enduml
