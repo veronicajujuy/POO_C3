@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Paciente{
+-numDocumento: int
+-nombre: String
+-edad:int
+-obraSocial: String
+-esParticular:boolean
+-cantExamenes: int
+-tieneCirugia: boolean
+-dadoAlta:boolean
+-medico:Medico
+-importeFijo:double
++hacerEstudios():void
++realizarPago():double
+}
+Paciente -l-> Medico
+class Medico{
+-matricula: int
+-nombre:String
+-honorarios:double
++cobrarHonorarios():void
+}
+Cardiologo -u-|> Medico
+Cirujano -u-|> Medico
+Dermatologo -u-|> Medico
+General -u-|> Medico
+class Cardiologo{}
+class Cirujano{
+-cantAyudantes: int
+}
+class Dermatologo{
+-importeMedicamentos: double
+}
+class General
+
+@enduml
