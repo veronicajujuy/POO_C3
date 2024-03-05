@@ -1,0 +1,38 @@
+@startuml
+abstract class Mascota{
+- tipo: String;
+- edad: int;
+- cantPatas: int;
+- nombre: String;
++ {abstract} haceRuido(): String
++ jugar():String
+}
+Perro -u-|> Mascota
+Gato -u-|> Mascota
+class Perro{
+- esGuardian: boolean
++ haceRuido():String
+}
+class Gato{
++ haceRuido():String
++ comportamientoGatuno(): String
+}
+
+Lobo .u.|> Ladrador
+Lobo .u.|> Cuidador
+Perro .u.|> Ladrador
+Perro .u.|> Cuidador
+class Lobo{
+-edad: int
+-colorPelo: String
+}
+
+interface Ladrador{
++ladrar():String
+}
+
+interface Cuidador{
++cuidar():String
+}
+
+@enduml
