@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+class Alumno{
+-nombre:String
+-apellido:String
+-legajo: int
++Alumno(nombre:String,
+apellido:String, legajo:int)
+}
+Alumno -r-> Examen
+abstract class Examen{
+-alumno:Alumno
+-titulo:String
+-enunciado:String
+-nota:double
++estaAprobado():boolean
+}
+ExamenParcial -u-|> Examen
+ExamenFinal -u-|> Examen
+class ExamenParcial{
+-numUnidad: int
+-numIntentos:int
++puedeRecuperar():boolean
+}
+class ExamenFinal{
+-notaOral: double
+-temaOral: String
++compareTo(o Objeto)
+}
+ExamenFinal ..|> Comparable
+interface Comparable{
++compareTo(o Objeto)
+}
+
+
+@enduml
