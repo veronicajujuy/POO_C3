@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+class Contenedor{
+-numero: int
+-paisProcedencia: Procedencia
+-esPeligroso: boolean
+}
+Procedencia -->Contenedor
+Contenedor <-r- Puerto
+class Puerto{
+-nombre:String
+-contenedores: List<Contenedor>
++mostrarContenedores():String
++cantidadPeligrosos():int
+}
+enum Procedencia{
+China,
+EEUU,
+Brasil,
+Rusia,
+Canada,
+Desconocida
+}
+@enduml
