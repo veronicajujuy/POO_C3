@@ -1,0 +1,28 @@
+@startuml
+class Circulo{
+-radio:double
++calcularArea():double;
+}
+class Triangulo{
+-base:double
+-altura:double
++calcularArea():double;
+}
+class Rectangulo{
+-base:double
+-altura:double
++calcularArea():double;
+}
+class FiguraCompuesta{
+-figuras: List<IFigura>
++calcularArea():double;
+}
+interface IFigura{
++calcularArea():double;
+}
+FiguraCompuesta .l.|>IFigura
+Triangulo .u.|>IFigura
+Rectangulo .u.|>IFigura
+Circulo .u.|>IFigura
+FiguraCompuesta *-- IFigura
+@enduml

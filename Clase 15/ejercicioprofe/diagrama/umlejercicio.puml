@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class ProductoIndividual{
+-nombre:String
+-precio:double
+}
+class Combo{
+-nombre:String
+-productos: List<IProducto>
+-descuento: double
+}
+interface IProducto{
++calcularPrecio():double;
+}
+Combo .u.|>IProducto
+ProductoIndividual .u.|>IProducto
+Combo *-- IProducto
+
+@enduml
