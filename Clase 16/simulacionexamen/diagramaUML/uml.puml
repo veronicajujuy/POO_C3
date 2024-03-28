@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+abstract class OfertaAcademicaFactory{
++{static} crearOfertaAcademica():IOfertaAcademica;
+}
+OfertaAcademicaFactory..>IOfertaAcademica
+class Curso{
+-nombre:String
+-descripcion: String
+-cargaHorariaMensual: int
+-cantMeses:int
+-valorHora: double
++calcularPrecio():double
+}
+class ProgramaIntensivo{
+-nombre:String
+-descuento: int
+-cursos: List<IOfertaAcademica>
++calcularPrecio():double
++agregarCursos(IOfertaAcademica)
+}
+interface IOfertaAcademica{
++calcularPrecio():double
+}
+Curso .u.|>IOfertaAcademica
+ProgramaIntensivo .u.|>IOfertaAcademica
+ProgramaIntensivo *--IOfertaAcademica
+@enduml
